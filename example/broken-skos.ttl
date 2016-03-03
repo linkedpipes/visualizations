@@ -1,0 +1,52 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+## This file is broken on purpose, for testing of our validators
+
+<http://data.openbudgets.eu/codelist/currency/AFN> <http://www.w3.org/2004/02/skos/core#prefLabel> "Afghani"@en ;
+	a <http://www.w3.org/2004/02/skos/core#Concept> , <http://data.openbudgets.eu/ontology/Currency> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.openbudgets.eu/resource/codelist/currency> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.openbudgets.eu/resource/codelist/currency> .
+
+<http://data.openbudgets.eu/resource/codelist/currency> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+<http://data.openbudgets.eu/codelist/currency/EUR> <http://www.w3.org/2004/02/skos/core#prefLabel> "Euro"@en ;
+	<http://www.w3.org/2004/02/skos/core#notation> "EUR" ;
+	a <http://www.w3.org/2004/02/skos/core#Concept> , <http://data.openbudgets.eu/ontology/Currency> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.openbudgets.eu/resource/codelist/currency> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.openbudgets.eu/codelist/currency/NonExistent> .
+
+<http://data.openbudgets.eu/codelist/currency/ALL> <http://www.w3.org/2004/02/skos/core#prefLabel> "Lek"@en ;
+	<http://www.w3.org/2004/02/skos/core#notation> "ALL" ;
+	a <http://www.w3.org/2004/02/skos/core#Concept> , <http://data.openbudgets.eu/ontology/Currency> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.openbudgets.eu/resource/codelist/currency> ;
+	<http://www.w3.org/2004/02/skos/core#narrower> <http://data.openbudgets.eu/codelist/currency/NonExistent> .
+
+<http://data.openbudgets.eu/codelist/currency/DZD> <http://www.w3.org/2004/02/skos/core#prefLabel> "Algerian Dinar"@en ;
+	<http://www.w3.org/2004/02/skos/core#notation> "DZD" ;
+	a <http://www.w3.org/2004/02/skos/core#Concept> , <http://data.openbudgets.eu/ontology/Currency> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.openbudgets.eu/resource/codelist/NonExistent> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.openbudgets.eu/resource/codelist/currency> .
+
+<http://data.openbudgets.eu/codelist/currency/USD> <http://www.w3.org/2004/02/skos/core#prefLabel> "US Dollar"@en ;
+	<http://www.w3.org/2004/02/skos/core#notation> "USD" ;
+	a <http://www.w3.org/2004/02/skos/core#Concept> , <http://data.openbudgets.eu/ontology/Currency> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.openbudgets.eu/resource/codelist/currency> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.openbudgets.eu/resource/codelist/currency> .
+
+<http://data.openbudgets.eu/codelist/currency/AOA> <http://www.w3.org/2004/02/skos/core#prefLabel> "Kwanza"@en ;
+	<http://www.w3.org/2004/02/skos/core#notation> "AOA" ;
+	a <http://www.w3.org/2004/02/skos/core#Concept> , <http://data.openbudgets.eu/ontology/Currency> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.openbudgets.eu/resource/codelist/currency> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.openbudgets.eu/resource/codelist/currency> .
+
+<http://data.openbudgets.eu/codelist/currency/XCD> <http://www.w3.org/2004/02/skos/core#prefLabel> "East Caribbean Dollar"@en ;
+	<http://www.w3.org/2004/02/skos/core#notation> "XCD" ;
+	a <http://www.w3.org/2004/02/skos/core#Concept> , <http://data.openbudgets.eu/ontology/Currency> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.openbudgets.eu/resource/codelist/currency> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.openbudgets.eu/resource/codelist/currency> .
+
