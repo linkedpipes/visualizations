@@ -2,7 +2,7 @@
 title: LinkedPipes Visualization
 email: klimek@opendata.cz
 description: > # this means to ignore newlines until "baseurl:"
-  Web presentation of LinkedPipes, a suite of open-source software for Linked Data.
+  LinkedPipes Visualization - Vocabulary based visualization tool for Linked Data
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://visualization.linkedpipes.com" # the base hostname & protocol for your site
 
