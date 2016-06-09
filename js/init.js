@@ -7,6 +7,5 @@
 	//$('.collapsible').collapsible();
 	$('.scrollspy').scrollSpy();
 	$('.toc-wrapper').pushpin({ top: $('.toc-wrapper').offset() ? $('.toc-wrapper').offset().top : 0 });
-	$('.modal-trigger').leanModal();
   }); // end of document ready
 })(jQuery); // end of jQuery name space
