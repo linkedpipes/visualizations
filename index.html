@@ -42,34 +42,34 @@ homepage: true
 
   <div class="container">
      <div class="row">
-        <div class="col s12">
-          <h3 class="center orange-text">What's new</h3>
-           <ul class="collapsible" data-collapsible="accordion">
-            {% for post in site.posts limit:1 %}
-            <li>
-              <div class="collapsible-header active"><i class="material-icons blue-text">{{ post.icon }}</i>{{ post.date | date: "%Y-%m-%d" }}: <span class=" orange-text">{{ post.title }}</span></div>
-              <div class="collapsible-body">
-                <p class="flow-text">{{ post.excerpt | remove: '<p class="center">' | remove: '</p>' }}</p>
-                {% if post.detail %}
-                <a href="{{ post.url }}" class="btn waves-effect waves-light orange"><i class="material-icons left">open_in_browser</i>Read more</a>
-                {% endif %}
-              </div>
-            </li>
-            {% endfor %}
-            {% for post in site.posts limit:4 offset:1 %}
-            <li>
-              <div class="collapsible-header"><i class="material-icons blue-text">{{ post.icon }}</i>{{ post.date | date: "%Y-%m-%d" }}: <span class="orange-text">{{ post.title }}</span></div>
-              <div class="collapsible-body">
-                <p class="flow-text">{{ post.excerpt | remove: '<p class="center">' | remove: '</p>' }}</p>
-                {% if post.detail %}
-                <a href="{{ post.url }}" class="btn waves-effect waves-light orange"><i class="material-icons left">open_in_browser</i>Read more</a>
-                {% endif %}
-              </div>
-            </li>
-            {% endfor %}
-           </ul>
-           <p class="center"><a href="/tips/" class="btn waves-effect waves-light orange"><i class="material-icons left">lightbulb_outline</i>More Tips &amp; Tricks</a> </p>
-        </div>
+          <div class="col s12">
+              <h3 class="center orange-text">What's new</h3>
+               <ul class="collapsible" data-collapsible="accordion">
+                {% for post in site.posts limit:1 %}
+                <li>
+                  <div class="collapsible-header active"><i class="material-icons blue-text">{{ post.icon }}</i>{{ post.date | date: "%Y-%m-%d" }}: <span class=" orange-text">{{ post.title }}</span></div>
+                  <div class="collapsible-body">
+                    <p class="flow-text">{{ post.excerpt | remove: '<p>' | remove: '<p class="flow-text">' | remove: '</p>' }}</p>
+                    {% if post.detail %}
+                    <a href="{{ post.url }}" class="btn waves-effect waves-light orange"><i class="material-icons left">open_in_browser</i>Read more</a>
+                    {% endif %}
+                  </div>
+                </li>
+                {% endfor %}
+                {% for post in site.posts limit:4 offset:1 %}
+                <li>
+                  <div class="collapsible-header"><i class="material-icons blue-text">{{ post.icon }}</i>{{ post.date | date: "%Y-%m-%d" }}: <span class="orange-text">{{ post.title }}</span></div>
+                  <div class="collapsible-body">
+                    <p class="flow-text">{{ post.excerpt | remove: '<p>' | remove: '<p class="flow-text">' | remove: '</p>' }}</p>
+                    {% if post.detail %}
+                    <a href="{{ post.url }}" class="btn waves-effect waves-light orange"><i class="material-icons left">open_in_browser</i>Read more</a>
+                    {% endif %}
+                  </div>
+                </li>
+                {% endfor %}
+               </ul>
+               <p class="center"><a href="/tips/" class="btn waves-effect waves-light orange"><i class="material-icons left">lightbulb_outline</i>More Tips &amp; Tricks</a> </p>
+          </div>
     </div>
   </div>
   
