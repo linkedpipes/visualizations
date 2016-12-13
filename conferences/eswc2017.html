@@ -10,8 +10,94 @@ materialicon: whatshot
         <p class="flow-text">This page describes the steps necessary to reproduce the results described in our ESWC 2017 paper submission.</p>
     </div>
     <div class="row">
-    
-    
+    	<p class="flow-text">
+	    	To evaluate the proposed platform we have implemented LinkedPipes.
+			LinkedPipes is a suite of web services, each specialized on different tasks related to processing LinkedData.
+			In this chapter, we describe the current state of the implementation of this suite.
+			We briefly describe the services related to application pipeline discovery.
+			We also describe, how the services communicate with each other in order to support application pipeline discovery workflows.
+		</p>  
+
+		<p>
+			The application pipeline discovery itself is implemented in the <em>discovery service</em>, which provides the following API:
+		</p>  
+
+		<pre>
+		start   POST         /discovery/start
+		status  GET          /discovery/$id
+		list    GET          /discovery/$id/pipelines
+		csv     GET          /discovery/$id/csv
+		export  GET          /discovery/$id/pipelines/$pipelineId
+		execute GET          /discovery/$id/pipelines/$pipelineId/execute
+		stop    GET          /discovery/$id/stop
+		</pre>
+
+		<p>
+			The discovery itself is executed by calling the <em>start</em> API call.
+			This API call expects a discovery configuration JSON object to be posted:
+		</p>
+
+		<pre>
+		{
+		    "sparqlEndpoints": [{
+		        "url": "http://www.europeandataportal.eu/sparql",
+		        "descriptorIri": "https://...sample.ttl",
+		        "defaultGraphIris": [],
+		        "label": "European Data Portal"
+		    }]
+		}
+		</pre>
+
+		<p>
+			The configuration object allows the user to specify an array of SPARQL endpoint definitions. For each endpoint, it requires its URL and dereferencable IRI of it's descriptor.
+			Optionally, it accepts also list of default graph IRIs, which are named graphs that are to be considered while performing the discovery.
+			In order to make the discovery results more readable, it also accepts a label that user can define to distinguish the endpoints.
+		</p>
+
+		<p>
+			When the <em>start</em> API call is executed, it returns a JSON object containing just one property, which is an ID of the started pipeline discovery instance:
+		</p>
+
+		<pre>
+		{ "id": "c1582982-1038-4218-911c-12c94ebd2b19" }
+		</pre>
+
+		<p>
+		This ID is to be used later as a parameter of the remaining API calls.
+		</p>
+
+		<p>
+			The next step is wait for the discovery to complete.
+			Although the partial results (discovered application pipelines are available via the <em>list</em> API call immediately after the iteration in which a pipeline is discovered are found, the \emph{status} API call could be used to wait for the discovery to complete.
+		</p>
+
+		<pre>
+		{
+		  "pipelineCount": 1,
+		  "isFinished": true,
+		  "duration": 350
+		}
+		</pre>
+
+		<p>	
+			Once the <em>isFinished</em> property is set to <em>true</em>, the pipeline discovery is finished and we can call the <em>list</em> API call to obtain all discovered application pipelines.
+			The returned data contain details about all the discovered pipelines, mainly which of the provided datasources were used, what application is able to consume data from them and what are the transformations needed to assemble the application pipeline.
+			Moreover, it contains an ID assigned to every discovered pipeline.
+		</p>	
+
+		<p>	
+			Such an ID can be later used with the <em>export</em> or <em>execute</em> API calls.
+			The former responds with a JSON-LD data that are in a format consumed by our ETL service.
+			The latter directly contacts a pre-configured ETL service instance, imports the specified pipeline into it and executes its processing.
+		</p>
+
+		<p>	
+			There are two more API calls that we did not mention so far.
+			One of them is the <em>stop</em> API call, which can be used to terminate the pipeline discovery if necessary.
+			The last one is named <em>csv</em>, which is an API call that temporarily simulates the ranking service.
+			We used it for conducting the experiments.
+			It implements the aforementioned ranking logic and provides us with a quick overview of what are the results of the discovery.
+		</p>
     </div>
         
 </div>
