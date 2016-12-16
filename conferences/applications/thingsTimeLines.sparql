@@ -1,0 +1,21 @@
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX lpviz: <http://visualization.linkedpipes.com/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+ASK {
+  ?thing dct:hasVersion ?version .
+  
+  ?version ?hasTemporalAbstraction ?interval .
+
+  ?interval time:hasBeginning ?beginning ;
+    time:hasEnd ?end .
+
+  OPTIONAL {
+	?interval rdfs:label ?intervalLabel . 
+  }
+	
+  ?beginning time:inXSDDateTime ?dtb .
+  
+  ?end time:inXSDDateTime ?dte .
+}

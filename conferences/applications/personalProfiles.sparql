@@ -1,0 +1,50 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX lpviz: <http://visualization.linkedpipes.com/ontology/>
+
+ASK {
+  ?agent foaf:name ?agentName ;
+	foaf:made ?thing .
+	  
+  {
+	?thing ?hasTemporalAbstraction ?instant .
+	
+	?instant time:inXSDDateTime ?dt .
+	
+	OPTIONAL {
+	  ?instant rdfs:label ?instantLabel . 
+    }
+  } UNION {
+	?thing ?hasTemporalAbstraction ?interval .
+	
+	?interval time:hasBeginning ?beginning ;
+		time:hasEnd ?end .
+
+	OPTIONAL {
+	  ?interval rdfs:label ?intervalLabel . 
+    }
+		
+	?beginning time:inXSDDateTime ?dtb .
+
+	?end time:inXSDDateTime ?dte .
+  } UNION {
+	?thing ?hasGeoAbstraction ?place .
+	
+	?place geo:location ?geo .
+  
+    OPTIONAL {
+      ?place rdfs:label ?placeLabel .
+    }
+  
+    ?geo a geo:SpatialThing ;
+      geo:long ?long ;
+      geo:lat ?lat .
+  }
+  
+  
+	
+	
+}

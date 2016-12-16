@@ -22,13 +22,16 @@ materialicon: whatshot
 		<h4 id="datasets">
 			Datasets
 		</h4>
-		<p class="flow-text">We have chosen 16 real-world datasets and manually created their output data graphs. The output data graphs are necessary for the application pipeline disocvery algorithm to be able to include the datasets to discovered pipelines.</p>
+		<p class="flow-text">
+		We have chosen 16 real-world datasets and manually created their output data graphs.
+		The output data graphs are necessary for the application pipeline disocvery algorithm to be able to include the datasets to discovered pipelines.
+		</p>
 		<p class="flow-text">They are presented in the following table. For each dataset, the table specifies:</p>
 		<ul class="flow-text">
 			<li><b>Datasource</b> - link to the datasource from which the dataset was extracted</li>
 			<li><b>Dataset</b> - name of the dataset</li>
 			<li><b>Dataset extraction query</b> - SPARQL query to extract the dataset from the datasource</li>
-			<li><b>Output data graph</b> - output data graph of the datasource necessary for the application pipeline discovery algorithm</li>
+			<li><b>Output data graph</b> - output data graph of the dataset necessary for the application pipeline discovery algorithm</li>
 		</ul>
 		<table class="flow-text highlight">
 			<thead>
@@ -58,6 +61,30 @@ materialicon: whatshot
 		<h4 id="applications">
 			Applications
 		</h4>
+		<p class="flow-text">
+		We defined 7 hypothetical applications which consume LD.
+		Hypothetical means that the applications actually do not exist.
+		The discovered pipelines transform <a href="#datasets">datasets</a> to the shape specified by the input descriptor queries we provide for each application.
+		</p>
+		<p class="flow-text">The applications are presented in the following table. For each application, the table specifies:</p>
+		<ul class="flow-text">
+			<li><b>Application</b> - name of the application</li>
+			<li><b>Input descriptor query</b> - input descriptor query of the application necessary for the application pipeline discovery algorithm</li>
+		</ul>
+		<table class="flow-text highlight">
+			<thead>
+				<tr><th>Application</th><th>Description</th><th>Input descriptor query</th></tr>
+			</thead>
+			<tbody>
+				<tr><td><td>TimeInstants</td><td>Consumes time instants (instances of <a href="http://www.w3.org/2006/time#Instant">time:Instant</a>) and shows them on a time line.</td><td><a href="applications/timeInstants.sparql">query</a></td></tr>
+				<tr><td><td>TimeIntervals</td><td>Consumes time intervals (instances of <a href="http://www.w3.org/2006/time#Interval">time:Interval</a>) and shows them on a time line.</td><td><a href="applications/timeIntervals.sparql">query</a></td></tr>
+				<tr><td><td>ThingsTimeLines</td><td>Consumes versioned things (<a href="http://purl.org/dc/terms/hasVersion">dct:hasVersion</a>) where each version has a temporal abstraction (instance of <a href="http://www.w3.org/2006/time#Interval">time:Interval</a>) and shows versions of a chosen thing on a time line.</td><td><a href="applications/thingsTimeLines.sparql">query</a></td></tr>
+				<tr><td><td>PlacesOnMap</td><td>Consumes spatial things (instances of <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a>) and shows them as points on a map.</td><td><a href="applications/placesOnMap.sparql">query</a></td></tr>
+				<tr><td><td>ThingsOnMap</td><td>Consumes things with geographical abstractions and shows them as labeled points on a map. A geographical abstraction is a place associated (<a href="http://www.w3.org/2003/01/geo/wgs84_pos#location">geo:location</a>) with a location expressed as a spatial thing (instances of <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a>).</td><td><a href="applications/thingsOnMap.sparql">query</a></td></tr>
+				<tr><td><td>QuantifiedThingsOnMap</td><td>Consumes things with geographical and quantified abstractions and shows them as points on a map. Points have labels and quantified values. A geographical abstraction is a place associated (<a href="http://www.w3.org/2003/01/geo/wgs84_pos#location">geo:location</a>) with a location expressed as a spatial thing (instances of <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a>). A quantified abstraction is a thing with a value associated by <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">rdf:value</a></td><td><a href="applications/quantifiedThingsOnMap.sparql">query</a></td></tr>
+				<tr><td><td>PersonalProfiles</td><td>Consumes persons (instances of <a href="http://xmlns.com/foaf/0.1/#Person">foaf:Person</a>) how made (<a href="http://xmlns.com/foaf/0.1/#made">foaf:Person</a>) some things where each thing has a temporal or geographical abstraction (see descriptions above). For a chosen person it shows the things he or she made on a timeline and/or on a map.</td><td><a href="applications/personalProfiles.sparql">query</a></td></tr>
+			</tbody>
+		</table>
 	</div>
 	<div class="row">
     	<p class="flow-text">
