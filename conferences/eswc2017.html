@@ -156,8 +156,69 @@ materialicon: whatshot
 	</div>
 	<div class="row">
     	<p class="flow-text">
-			TBA
+			The experimental results presented in the paper are only a summary of detailed results we provide in <a href="http://opendata.cz/martin/eswc2017-experiments/experiment-results-eswc2017.xlsx">this excel file (27,2 MB)</a>. It has the following sheets:
 		</p>
+		<ol class="flow-text">
+			<li><b>Single dataset</b> - (Dataset,Application) pairs for Experiment 1. Column Expected denotes whether the application was identified as the best application for the dataset or not. Expected == false means that the algorithm discovered a pipeline for the pair and it was manually checked after the discovery that the pair is useful. Columns Expected* show ideal pipelines for the pair which were identified before we ran the discovery. Columns Unexpected* show other pipelines discovered by the algorithm which were denoted as useful manually after the discovery. Other columns are helpers or reserved for the future use.</li>
+			<li><b>Single dataset - results</b> - shows the full list of discovered pipelines for all datasets in Experiment 1. It does not make sense to read it.</li>
+			<li><b>Single dataset - summary</b> - shows the pivot table computed from Single dataset - results. It shows the grouping of pipelines and ranking the groups as described in the paper. Level 1 contains applications. Level 2 contains datasets. Level 3 contains groups of pipelines. Level 4 contains pipelines. Each pipeline is displayed as a sequence of transformers which are present in the pipeline.</li>
+			<li><b>Two datasets</b> - (Dataset+Linkset+Dataset,Application) pairs for Experiment 2. The same meaning of columns as for Single dataset.</li>
+			<li><b>Two datasets - results</b> - shows the full list of discovered pipelines for in Experiment 2. It does not make sense to read it.</li>
+			<li><b>Two datasets - summary</b> - shows the pivot table computed from STwo dataset - results. Its structure is the same as the strurcture of Single dataset - summary.</li>
+		</ol>
+	</div>
+	<div class="row">
+    	<p class="flow-text">
+			The ideal pipeline discovered by the algorithm for each pair of dataset(s) and application listed in the provided detailed results is available in the table below.
+			For each pipeline, the table specifies:
+		</p>
+		<ul class="flow-text">
+			<li><b>Dataset(s)</b> - dataset name (Experiment 1) or names of two datasets and linkset (Experiment 2)</li>
+			<li><b>Application</b> - application name</li>
+			<li><b>Expected</b> - shows whether the combination of Dataset(s) and Application was expected, i.e. whether the Appliation was chosen as the best for the Dataset(s) before we ran the discovery</b></li>
+			<li><b>Pipeline JSON</b> - link to the JSON representation of the discovered pipeline which can be directly imported to <a href="http://etl.linkedpipes.com">LinkedPipes ETL</a></li>
+			<li><b>Pipeline in LP-ETL</b> - link to the pipeline presented in <a href="http://etl.linkedpipes.com">LinkedPipes ETL</a> user interface where it can be also executed</li>
+			<li><b>Result</b> - link to the result of execute of the pipeline in Turtle</li>
+		</ul>
+		<table class="flow-text highlight">
+			<thead>
+				<tr><th>Dataset(s)</th><th>Application</th><th>Expected</th><th>Pipeline JSON</th><th>Pipeline in LP-ETL</th><th>Result</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>DBLP</td><td>PersonalProfilesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>DBPedia - Earthquakes</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>DBPedia - Towns</td><td>PlacesOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>European Data Portal</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Check Actions - Czech Supreme Audit Office</td><td>TimeIntervalsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Check Actions - Czech Trade Inspection Authority</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Legislation CZ - Acts</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Legislation CZ - Versions of Acts</td><td>ThingsTimelinesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Legislation UK - Acts</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Legislation UK - Versions of Acts</td><td>ThingsTimelinesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>LinkedMDB</td><td>PersonalProfilesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>RÚIAN - Address Places in Czech Republic</td><td>PlacesOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>RÚIAN - Towns in Czech Republic</td><td>ThingsOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Subsidies from public budgets in Czech Republic</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>University of Sheffield - Department of Computer Science</td><td>PersonalProfilesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Wikidata - Towns</td><td>QuantifiedThingsOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>DBLP</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>DBPedia - Earthquakes</td><td>PlacesOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Check Actions - Czech Supreme Audit Office</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Legislation CZ - Versions of Acts</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Legislation CZ - Versions of Acts</td><td>TimeIntervalsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Legislation UK - Versions of Acts</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Legislation UK - Versions of Acts</td><td>TimeIntervalsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>LinkedMDB</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>RÚIAN - Towns in Czech Republic</td><td>PlacesOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>University of Sheffield - Department of Computer Science</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Wikidata - Towns</td><td>PlacesOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Wikidata - Towns</td><td>ThingsOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Linkset : Towns from Wikidata --- Towns from RUIAN<br>Towns in Wikidata<br>Towns in Czech Republic - RÚIAN</td><td>QuantifiedThingsOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Linkset : Towns from DBPedia --- Towns from RUIAN<br>Towns in DBPedia<br>Towns in Czech Republic - RÚIAN</td><td>QuantifiedThingsOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Linkset : Towns from Wikidata --- Towns from RUIAN<br>Towns in Wikidata<br>Towns in Czech Republic - RÚIAN</td><td>ThingsOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+				<tr><td>Linkset : Towns from DBPedia --- Towns from RUIAN<br>Towns in DBPedia<br>Towns in Czech Republic - RÚIAN</td><td>ThingsOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
+			</tbody>
+		</table>
 	</div>
 	<div class="row">
 		<h4 id="prototype">
