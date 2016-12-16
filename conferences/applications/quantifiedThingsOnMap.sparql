@@ -21,7 +21,7 @@ ASK {
   ?quantity rdf:value ?quantityValue .
   
   OPTIONAL {
-    ?quantity s:unitCode ?quantityUnit .
+    ?quantity schema:unitCode ?quantityUnit .
   }
   
   OPTIONAL {

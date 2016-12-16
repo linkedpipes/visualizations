@@ -1,0 +1,19 @@
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+DELETE {
+  ?s ?p ?interval .
+} INSERT {
+  ?s dct:temporal ?interval .
+} WHERE {
+  ?s ?p ?interval .
+  
+  FILTER (?p != dct:temporal)
+
+  {
+    ?interval time:hasBeginning ?beginning .
+  } UNION {
+	?interval time:hasEnd ?end .
+  }
+  
+}

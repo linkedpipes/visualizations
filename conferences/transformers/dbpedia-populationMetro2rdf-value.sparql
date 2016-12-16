@@ -1,0 +1,22 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+DELETE {
+  ?town dbo:populationMetro ?population .
+} INSERT {
+  ?town dct:extent ?abstraction .
+  
+  ?abstraction rdf:value ?population ;
+	rdfs:label ?abstractionLabel .
+} WHERE {
+  ?town dbo:populationMetro ?population .
+	
+  OPTIONAL {
+    ?town rdfs:label ?label .
+	BIND(CONCAT("Metro population of ", STR(?label)) AS ?abstractionLabel)
+  }
+  
+  BIND(IRI(CONCAT(STR(?town), "/abstraction/dbpedia-populationMetro2rdf-value")) AS ?abstraction)
+}

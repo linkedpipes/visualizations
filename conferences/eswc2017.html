@@ -61,6 +61,8 @@ materialicon: whatshot
 		<h4 id="applications">
 			Applications
 		</h4>
+	</div>
+	<div class="row">
 		<p class="flow-text">
 		We defined 7 hypothetical applications which consume LD.
 		Hypothetical means that the applications actually do not exist.
@@ -88,19 +90,64 @@ materialicon: whatshot
 		</table>
 	</div>
 	<div class="row">
-    	<p class="flow-text">
-			TBA
-		</p>
-	</div>
-	<div class="row">
 		<h4 id="transformers">
 			Transformers
 		</h4>
 	</div>
 	<div class="row">
     	<p class="flow-text">
-			TBA
+			We defined 33 transformers listed in the following table.
+			The table starts with transformers which transform proprietary RDF shapes to non-proprietary ones.
+			Transformers which transform non-proprietary RDF shapes to other non-proprietary shapes follow.
+			A proprietary RDF shape is a shape which contains classes or predicates from proprietary vocabularies.
+			A proprietary vocabulary is a vocabulary which is used only in data sources provided by the same publisher, i.e is not reused by more publishers.
+			For each transformer, the table specifies:
 		</p>
+		<ul class="flow-text">
+			<li><b>Transformer</b> - name of the transformer</li>
+			<li><b>Proprietary input</b> - true when the input expected by the transformer has a proprietary RDF shape.</li>
+			<li><b>Update query</b> - update query which defines the transformer</li>
+		</ul>
+		<table class="flow-text highlight">
+			<thead>
+				<tr><th>Transformer</th><th>Proprietary input</th><th>Update query</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>cedr-dotace-castka2rdf-value</td><td>true</td><td><a href="transformers/cedr-dotace-castka2rdf-value.sparql">query</a></td></tr>
+				<tr><td>cedr-sidliNaAdrese2geo-SpatialThing</td><td>true</td><td><a href="transformers/cedr-sidliNaAdrese2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>cedr-smlouvaPodpisDatum2dct-created</td><td>true</td><td><a href="transformers/cedr-smlouvaPodpisDatum2dct-created.sparql">query</a></td></tr>
+				<tr><td>cedr-smlouvaPodpisDatum2time-Instant</td><td>true</td><td><a href="transformers/cedr-smlouvaPodpisDatum2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dbpedia-date2time-Instant</td><td>true</td><td><a href="transformers/dbpedia-date2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dbpedia-populationMetro2rdf-value</td><td>true</td><td><a href="transformers/dbpedia-populationMetro2rdf-value.sparql">query</a></td></tr>
+				<tr><td>dbpedia-populationTotal2rdf-value</td><td>true</td><td><a href="transformers/dbpedia-populationTotal2rdf-value.sparql">query</a></td></tr>
+				<tr><td>lex-Act2frbr-Work</td><td>true</td><td><a href="transformers/lex-Act2frbr-Work.sparql">query</a></td></tr>
+				<tr><td>movie-initial-release-of2time-Instant</td><td>true</td><td><a href="transformers/movie-initial-release-of2time-Instant.sparql">query</a></td></tr>
+				<tr><td>movie-person-name2foaf-name</td><td>true</td><td><a href="transformers/movie-person-name2foaf-name.sparql">query</a></td></tr>
+				<tr><td>movie-person2foaf-made</td><td>true</td><td><a href="transformers/movie-person2foaf-made.sparql">query</a></td></tr>
+				<tr><td>ruian-AdresniMisto2geo-SpatialThing</td><td>true</td><td><a href="transformers/ruian-AdresniMisto2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>ruian-DefinicniBod2geo-SpatialThing</td><td>true</td><td><a href="transformers/ruian-DefinicniBod2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>wikidata-coordinate-location2geo-SpatialThing</td><td>true</td><td><a href="transformers/wikidata-coordinate-location2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>wikidata-population2rdf-value</td><td>true</td><td><a href="transformers/wikidata-population2rdf-value.sparql">query</a></td></tr>
+				<tr><td>bibtex-date2dct-issued</td><td>false</td><td><a href="transformers/bibtex-date2dct-issued.sparql">query</a></td></tr>
+				<tr><td>dct-created2time-Instant</td><td>false</td><td><a href="transformers/dct-created2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dct-date2time-Instant</td><td>false</td><td><a href="transformers/dct-date2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dct-issued2time-Instant</td><td>false</td><td><a href="transformers/dct-issued2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dct-valid2time-Interval-01</td><td>false</td><td><a href="transformers/dct-valid2time-Interval-01.sparql">query</a></td></tr>
+				<tr><td>dct-valid2time-Interval-02</td><td>false</td><td><a href="transformers/dct-valid2time-Interval-02.sparql">query</a></td></tr>
+				<tr><td>foaf-maker2foaf-made</td><td>false</td><td><a href="transformers/foaf-maker2foaf-made.sparql">query</a></td></tr>
+				<tr><td>foaf-name2dct-title</td><td>false</td><td><a href="transformers/foaf-name2dct-title.sparql">query</a></td></tr>
+				<tr><td>foaf-rdfs-label2foaf-name</td><td>false</td><td><a href="transformers/foaf-rdfs-label2foaf-name.sparql">query</a></td></tr>
+				<tr><td>foaf-skos-prefLabel2foaf-name</td><td>false</td><td><a href="transformers/foaf-skos-prefLabel2foaf-name.sparql">query</a></td></tr>
+				<tr><td>frbr-realization2dct-hasVersion</td><td>false</td><td><a href="transformers/frbr-realization2dct-hasVersion.sparql">query</a></td></tr>
+				<tr><td>frbr-realizationOf2frbr-realization</td><td>false</td><td><a href="transformers/frbr-realizationOf2frbr-realization.sparql">query</a></td></tr>
+				<tr><td>gr-legalName2dct-title</td><td>false</td><td><a href="transformers/gr-legalName2dct-title.sparql">query</a></td></tr>
+				<tr><td>org-hasMembership2org-member</td><td>false</td><td><a href="transformers/org-hasMembership2org-member.sparql">query</a></td></tr>
+				<tr><td>schema-address2geo-SpatialThing</td><td>false</td><td><a href="transformers/schema-address2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>schema-GeoCoordinates2geo-SpatialThing</td><td>false</td><td><a href="transformers/schema-GeoCoordinates2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>swrc-editor2foaf-made</td><td>false</td><td><a href="transformers/swrc-editor2foaf-made.sparql">query</a></td></tr>
+				<tr><td>time-Interval2time-Interval</td><td>false</td><td><a href="transformers/time-Interval2time-Interval.sparql">query</a></td></tr>
+			</tbody>
+		</table>
 	</div>
 	<div class="row">
 		<h4 id="results">

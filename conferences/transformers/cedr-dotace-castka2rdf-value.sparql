@@ -1,0 +1,29 @@
+PREFIX cedr: <http://cedropendata.mfcr.cz/c3lod/cedr/vocabCEDR#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
+
+DELETE {
+  ?prijemce cedr:obdrzelDotaci ?dotace .
+  ?dotace cedr:byloRozhodnuto ?rozhodnuti .
+  ?rozhodnuti cedr:castkaRozhodnuta ?castka .
+} INSERT {
+  ?prijemce dct:extent ?quantity .
+  
+  ?quantity rdf:value ?castka ;
+	schema:unitCode "CZK" ;
+	rdfs:label ?abstractionLabel .
+	
+} WHERE {
+  ?prijemce cedr:obdrzelDotaci ?dotace .
+  ?dotace cedr:byloRozhodnuto ?rozhodnuti .
+  ?rozhodnuti cedr:castkaRozhodnuta ?castka .
+	
+  OPTIONAL {
+    ?dotace dct:title ?title .
+	BIND(CONCAT("Allocated money for subsidy number ", STR(?title)) AS ?abstractionLabel)
+  }
+  
+  BIND(IRI(CONCAT(STR(?rozhodnuti), "/abstraction/cedr-dotace-castka2rdf-value")) AS ?quantity)
+}
