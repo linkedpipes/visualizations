@@ -9,7 +9,7 @@ materialicon: whatshot
     <h3 class="header center orange-text">Details of experiments for ESWC 2017 submission</h3>
 	<div class="row">
 		<p class="flow-text">This page provide details of the experiments presented in our ESWC 2017 submission.</p>
-		<ol>
+		<ol class="flow-text">
 			<li><a href="#datasets">Datasets</a></li>
 			<li><a href="#applications">Applications</a></li>
 			<li><a href="#transformers">Transformers</a></li>
@@ -18,51 +18,87 @@ materialicon: whatshot
 			<li><a href="#reproducing">Reproducing the experimental results</a></li>
 		</ol>
 	</div>
-	<h4 id="datasets">
-		Datasets
-	</h4>
-	<p class="flow-text">We have chosen 16 real-world datasets and manually created their output data graphs. The output data graphs are necessary for the application pipeline disocvery algorithm to be able to include the datasets to discovered pipelines.</p>
-	<p class="flow-text">They are presented in the following table. For each dataset, the table specifies:</p>
-	<ul>
-		<li><b>Datasource</b> - link to the datasource from which the dataset was extracted</li>
-		<li><b>Dataset</b> - name of the dataset</li>
-		<li><b>Dataset extraction query</b> - SPARQL query to extract the dataset from the datasource</li>
-		<li><b>Output data graph</b> - output data graph of the datasource necessary for the application pipeline discovery algorithm</li>
-	</ul>
-	<table>
-		<tr><td>Datasource</td><td>Dataset</td><td>Dataset extraction query</td><td>Output data graph</td></tr>
-		<tr><td><a href="http://dblp.l3s.de/d2r/sparql">SPARQL endpoint</a></td><td>DBLP</td><td><a href="datasets/extractor-dblp.sparql">query</a></td><td><a href="datasets/graph-dblp.ttl">graph</a></td></tr>
-		<tr><td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td><td>DBPedia - Earthquakes</td><td><a href="datasets/extractor-dbpedia-earthquakes.sparql">query</a></td><td><a href="datasets/graph-dbpedia-earthquakes.ttl">graph</a></td></tr>
-		<tr><td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td><td>DBPedia - Towns</td><td><a href="datasets/extractor-towns.sparql">query</a></td><td><a href="datasets/graph-towns.ttl">graph</a></td></tr>
-		<tr><td><a href="http://www.europeandataportal.eu/sparql">SPARQL endpoint</a></td><td>European Data Portal</td><td><a href="datasets/extractor-edp.sparql">query</a></td><td><a href="datasets/graph-edp.ttl">graph</a></td></tr>
-		<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Check actions - Czech Supreme Audit Office</td><td><a href="datasets/extractor-checkactions-cz-sao.sparql">query</a></td><td><a href="datasets/graph-checkactions-cz-sao.ttl">graph</a></td></tr>
-		<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Check actions - Czech Trade Inspection Authority</td><td><a href="datasets/extractor-checkactions-cz-ctia.sparql">query</a></td><td><a href="datasets/graph-checkactions-cz-ctia.ttl">graph</a></td></tr>
-		<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Legislation CZ - Acts</td><td><a href="datasets/extractor-legislation-cz-acts.sparql">query</a></td><td><a href="datasets/graph-legislation-cz-acts.ttl">graph</a></td></tr>
-		<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Legislation CZ - Versions of Acts</td><td><a href="datasets/extractor-legislation-cz-acts-versions.sparql">query</a></td><td><a href="datasets/graph-legislation-cz-acts-versions.ttl">graph</a></td></tr>
-		<tr><td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td><td>Legislation UK - Acts</td><td><a href="datasets/extractor-legislation-gb-acts.sparql">query</a></td><td><a href="datasets/graph-legislation-gb-acts.ttl">graph</a></td></tr>
-		<tr><td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td><td>Legislation UK - Versions of Acts</td><td><a href="datasets/extractor-legislation-gb-acts-versions.sparql">query</a></td><td><a href="datasets/graph-legislation-gb-acts-versions.ttl">graph</a></td></tr>
-		<tr><td><a href="http://data.linkedmdb.org/sparql">SPARQL endpoint</a></td><td>LinkedMDB</td><td><a href="datasets/extractor-linkedmdb.sparql">query</a></td><td><a href="datasets/graph-linkedmdb.ttl">graph</a></td></tr>
-		<tr><td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>RÚIAN - Address Places in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-address-places.sparql">query</a></td><td><a href="datasets/graph-cz-ruian-address-places.ttl">graph</a></td></tr>
-		<tr><td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>RÚIAN - Towns in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-towns.sparql">query</a></td><td><a href="datasets/graph-cz-ruian-towns.ttl">graph</a></td></tr>
-		<tr><td><a href="http://cedropendata.mfcr.cz/c3lod/cedr/sparql">SPARQL endpoint</a></td><td>Subsidies from public budgets in Czech Republic</td><td><a href="datasets/extractor-subsidies-cz-cedr.sparql">query</a></td><td><a href="datasets/graph-subsidies-cz-cedr.ttl">graph</a></td></tr>
-		<tr><td><a href="http://data.dcs.shef.ac.uk/dump/datadcs-withdblpV1-2Mar2010.rdf">RDF dump</a></td><td>University of Sheffield - Department of Comp. Sc.</td><td><a href="datasets/extractor-department-of-computer-science-university-of-sheffield.sparql">query</a></td><td><a href="datasets/graph-department-of-computer-science-university-of-sheffield.ttl">graph</a></td></tr>
-		<tr><td><a href="http://query.wikidata.org">SPARQL endpoint</a></td><td>Towns in Wikidata</td><td><a href="datasets/extractor-wikidata-towns.sparql">query</a></td><td><a href="datasets/graph-wikidata-towns.ttl">graph</a></td></tr>
-	</table>
-	<h4 id="applications">
-		Applications
-	</h4>
-	<h4 id="transformers">
-		Transformers
-	</h4>
-	<h4 id="results">
-		Experiment results
-	</h4>
-	<h4 id="prototype">
-		Platform prototype overview
-	</h4>
-	<h4 id="reproducing">
-		Reproducing the experimental results
-	</h4>
+	<div class="row">
+		<h4 id="datasets">
+			Datasets
+		</h4>
+		<p class="flow-text">We have chosen 16 real-world datasets and manually created their output data graphs. The output data graphs are necessary for the application pipeline disocvery algorithm to be able to include the datasets to discovered pipelines.</p>
+		<p class="flow-text">They are presented in the following table. For each dataset, the table specifies:</p>
+		<ul class="flow-text">
+			<li><b>Datasource</b> - link to the datasource from which the dataset was extracted</li>
+			<li><b>Dataset</b> - name of the dataset</li>
+			<li><b>Dataset extraction query</b> - SPARQL query to extract the dataset from the datasource</li>
+			<li><b>Output data graph</b> - output data graph of the datasource necessary for the application pipeline discovery algorithm</li>
+		</ul>
+		<table class="flow-text highlight">
+			<thead>
+				<tr><th>Datasource</th><th>Dataset</th><th>Dataset extraction query</th><th>Output data graph</th></tr>
+			</thead>
+			<tbody>
+				<tr><td><a href="http://dblp.l3s.de/d2r/sparql">SPARQL endpoint</a></td><td>DBLP</td><td><a href="datasets/extractor-dblp.sparql">query</a></td><td><a href="datasets/graph-dblp.ttl">graph</a></td></tr>
+				<tr><td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td><td>DBPedia - Earthquakes</td><td><a href="datasets/extractor-dbpedia-earthquakes.sparql">query</a></td><td><a href="datasets/graph-dbpedia-earthquakes.ttl">graph</a></td></tr>
+				<tr><td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td><td>DBPedia - Towns</td><td><a href="datasets/extractor-towns.sparql">query</a></td><td><a href="datasets/graph-towns.ttl">graph</a></td></tr>
+				<tr><td><a href="http://www.europeandataportal.eu/sparql">SPARQL endpoint</a></td><td>European Data Portal</td><td><a href="datasets/extractor-edp.sparql">query</a></td><td><a href="datasets/graph-edp.ttl">graph</a></td></tr>
+				<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Check actions - Czech Supreme Audit Office</td><td><a href="datasets/extractor-checkactions-cz-sao.sparql">query</a></td><td><a href="datasets/graph-checkactions-cz-sao.ttl">graph</a></td></tr>
+				<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Check actions - Czech Trade Inspection Authority</td><td><a href="datasets/extractor-checkactions-cz-ctia.sparql">query</a></td><td><a href="datasets/graph-checkactions-cz-ctia.ttl">graph</a></td></tr>
+				<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Legislation CZ - Acts</td><td><a href="datasets/extractor-legislation-cz-acts.sparql">query</a></td><td><a href="datasets/graph-legislation-cz-acts.ttl">graph</a></td></tr>
+				<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Legislation CZ - Versions of Acts</td><td><a href="datasets/extractor-legislation-cz-acts-versions.sparql">query</a></td><td><a href="datasets/graph-legislation-cz-acts-versions.ttl">graph</a></td></tr>
+				<tr><td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td><td>Legislation UK - Acts</td><td><a href="datasets/extractor-legislation-gb-acts.sparql">query</a></td><td><a href="datasets/graph-legislation-gb-acts.ttl">graph</a></td></tr>
+				<tr><td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td><td>Legislation UK - Versions of Acts</td><td><a href="datasets/extractor-legislation-gb-acts-versions.sparql">query</a></td><td><a href="datasets/graph-legislation-gb-acts-versions.ttl">graph</a></td></tr>
+				<tr><td><a href="http://data.linkedmdb.org/sparql">SPARQL endpoint</a></td><td>LinkedMDB</td><td><a href="datasets/extractor-linkedmdb.sparql">query</a></td><td><a href="datasets/graph-linkedmdb.ttl">graph</a></td></tr>
+				<tr><td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>RÚIAN - Address Places in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-address-places.sparql">query</a></td><td><a href="datasets/graph-cz-ruian-address-places.ttl">graph</a></td></tr>
+				<tr><td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>RÚIAN - Towns in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-towns.sparql">query</a></td><td><a href="datasets/graph-cz-ruian-towns.ttl">graph</a></td></tr>
+				<tr><td><a href="http://cedropendata.mfcr.cz/c3lod/cedr/sparql">SPARQL endpoint</a></td><td>Subsidies from public budgets in Czech Republic</td><td><a href="datasets/extractor-subsidies-cz-cedr.sparql">query</a></td><td><a href="datasets/graph-subsidies-cz-cedr.ttl">graph</a></td></tr>
+				<tr><td><a href="http://data.dcs.shef.ac.uk/dump/datadcs-withdblpV1-2Mar2010.rdf">RDF dump</a></td><td>University of Sheffield - Department of Comp. Sc.</td><td><a href="datasets/extractor-department-of-computer-science-university-of-sheffield.sparql">query</a></td><td><a href="datasets/graph-department-of-computer-science-university-of-sheffield.ttl">graph</a></td></tr>
+				<tr><td><a href="http://query.wikidata.org">SPARQL endpoint</a></td><td>Towns in Wikidata</td><td><a href="datasets/extractor-wikidata-towns.sparql">query</a></td><td><a href="datasets/graph-wikidata-towns.ttl">graph</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<h4 id="applications">
+			Applications
+		</h4>
+	</div>
+	<div class="row">
+    	<p class="flow-text">
+			TBA
+		</p>
+	</div>
+	<div class="row">
+		<h4 id="transformers">
+			Transformers
+		</h4>
+	</div>
+	<div class="row">
+    	<p class="flow-text">
+			TBA
+		</p>
+	</div>
+	<div class="row">
+		<h4 id="results">
+			Experiment results
+		</h4>
+	</div>
+	<div class="row">
+    	<p class="flow-text">
+			TBA
+		</p>
+	</div>
+	<div class="row">
+		<h4 id="prototype">
+			Platform prototype overview
+		</h4>
+	</div>
+	<div class="row">
+    	<p class="flow-text">
+			TBA
+		</p>
+	</div>
+	<div class="row">
+		<h4 id="reproducing">
+			Reproducing the experimental results
+		</h4>
+	</div>
     <div class="row">
         <p class="flow-text">This page describes the steps necessary to reproduce the results described in our ESWC 2017 paper submission.</p>
     </div>
