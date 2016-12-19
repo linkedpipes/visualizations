@@ -38,22 +38,92 @@ materialicon: whatshot
 				<tr><th>Datasource</th><th>Dataset</th><th>Dataset extraction query</th><th>Output data graph</th></tr>
 			</thead>
 			<tbody>
-				<tr><td><a href="http://dblp.l3s.de/d2r/sparql">SPARQL endpoint</a></td><td>DBLP</td><td><a href="datasets/extractor-dblp.sparql">query</a></td><td><a href="datasets/graph-dblp.ttl">graph</a></td></tr>
-				<tr><td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td><td>DBPedia - Earthquakes</td><td><a href="datasets/extractor-dbpedia-earthquakes.sparql">query</a></td><td><a href="datasets/graph-dbpedia-earthquakes.ttl">graph</a></td></tr>
-				<tr><td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td><td>DBPedia - Towns</td><td><a href="datasets/extractor-towns.sparql">query</a></td><td><a href="datasets/graph-towns.ttl">graph</a></td></tr>
-				<tr><td><a href="http://www.europeandataportal.eu/sparql">SPARQL endpoint</a></td><td>European Data Portal</td><td><a href="datasets/extractor-edp.sparql">query</a></td><td><a href="datasets/graph-edp.ttl">graph</a></td></tr>
-				<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Check actions - Czech Supreme Audit Office</td><td><a href="datasets/extractor-checkactions-cz-sao.sparql">query</a></td><td><a href="datasets/graph-checkactions-cz-sao.ttl">graph</a></td></tr>
-				<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Check actions - Czech Trade Inspection Authority</td><td><a href="datasets/extractor-checkactions-cz-ctia.sparql">query</a></td><td><a href="datasets/graph-checkactions-cz-ctia.ttl">graph</a></td></tr>
-				<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Legislation CZ - Acts</td><td><a href="datasets/extractor-legislation-cz-acts.sparql">query</a></td><td><a href="datasets/graph-legislation-cz-acts.ttl">graph</a></td></tr>
-				<tr><td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>Legislation CZ - Versions of Acts</td><td><a href="datasets/extractor-legislation-cz-acts-versions.sparql">query</a></td><td><a href="datasets/graph-legislation-cz-acts-versions.ttl">graph</a></td></tr>
-				<tr><td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td><td>Legislation UK - Acts</td><td><a href="datasets/extractor-legislation-gb-acts.sparql">query</a></td><td><a href="datasets/graph-legislation-gb-acts.ttl">graph</a></td></tr>
-				<tr><td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td><td>Legislation UK - Versions of Acts</td><td><a href="datasets/extractor-legislation-gb-acts-versions.sparql">query</a></td><td><a href="datasets/graph-legislation-gb-acts-versions.ttl">graph</a></td></tr>
-				<tr><td><a href="http://data.linkedmdb.org/sparql">SPARQL endpoint</a></td><td>LinkedMDB</td><td><a href="datasets/extractor-linkedmdb.sparql">query</a></td><td><a href="datasets/graph-linkedmdb.ttl">graph</a></td></tr>
-				<tr><td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>RÚIAN - Address Places in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-address-places.sparql">query</a></td><td><a href="datasets/graph-cz-ruian-address-places.ttl">graph</a></td></tr>
-				<tr><td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td><td>RÚIAN - Towns in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-towns.sparql">query</a></td><td><a href="datasets/graph-cz-ruian-towns.ttl">graph</a></td></tr>
-				<tr><td><a href="http://cedropendata.mfcr.cz/c3lod/cedr/sparql">SPARQL endpoint</a></td><td>Subsidies from public budgets in Czech Republic</td><td><a href="datasets/extractor-subsidies-cz-cedr.sparql">query</a></td><td><a href="datasets/graph-subsidies-cz-cedr.ttl">graph</a></td></tr>
-				<tr><td><a href="http://data.dcs.shef.ac.uk/dump/datadcs-withdblpV1-2Mar2010.rdf">RDF dump</a></td><td>University of Sheffield - Department of Comp. Sc.</td><td><a href="datasets/extractor-department-of-computer-science-university-of-sheffield.sparql">query</a></td><td><a href="datasets/graph-department-of-computer-science-university-of-sheffield.ttl">graph</a></td></tr>
-				<tr><td><a href="http://query.wikidata.org">SPARQL endpoint</a></td><td>Towns in Wikidata</td><td><a href="datasets/extractor-wikidata-towns.sparql">query</a></td><td><a href="datasets/graph-wikidata-towns.ttl">graph</a></td></tr>
+				<tr>
+					<td><a href="http://dblp.l3s.de/d2r/sparql">SPARQL endpoint</a></td>
+					<td>DBLP</td>
+					<td><a href="datasets/extractor-dblp.sparql">query</a></td>
+					<td><a href="datasets/graph-dblp.ttl">graph</a></td></tr>
+				<tr>
+					<td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td>
+					<td>DBPedia - Earthquakes</td>
+					<td><a href="datasets/extractor-dbpedia-earthquakes.sparql">query</a></td>
+					<td><a href="datasets/graph-dbpedia-earthquakes.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td>
+					<td>DBPedia - Towns</td>
+					<td><a href="datasets/extractor-towns.sparql">query</a></td>
+					<td><a href="datasets/graph-towns.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://www.europeandataportal.eu/sparql">SPARQL endpoint</a></td>
+					<td>European Data Portal</td>
+					<td><a href="datasets/extractor-edp.sparql">query</a></td>
+					<td><a href="datasets/graph-edp.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>Check actions - Czech Supreme Audit Office</td>
+					<td><a href="datasets/extractor-checkactions-cz-sao.sparql">query</a></td>
+					<td><a href="datasets/graph-checkactions-cz-sao.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>Check actions - Czech Trade Inspection Authority</td><td><a href="datasets/extractor-checkactions-cz-ctia.sparql">query</a></td>
+					<td><a href="datasets/graph-checkactions-cz-ctia.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>Legislation CZ - Acts</td><td><a href="datasets/extractor-legislation-cz-acts.sparql">query</a></td>
+					<td><a href="datasets/graph-legislation-cz-acts.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>Legislation CZ - Versions of Acts</td><td><a href="datasets/extractor-legislation-cz-acts-versions.sparql">query</a></td>
+					<td><a href="datasets/graph-legislation-cz-acts-versions.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td>
+					<td>Legislation UK - Acts</td><td><a href="datasets/extractor-legislation-gb-acts.sparql">query</a></td>
+					<td><a href="datasets/graph-legislation-gb-acts.ttl">graph</a></td>
+				</tr>
+				<tr>	
+					<td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td>
+					<td>Legislation UK - Versions of Acts</td><td><a href="datasets/extractor-legislation-gb-acts-versions.sparql">query</a></td>
+					<td><a href="datasets/graph-legislation-gb-acts-versions.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://data.linkedmdb.org/sparql">SPARQL endpoint</a></td>
+					<td>LinkedMDB</td><td><a href="datasets/extractor-linkedmdb.sparql">query</a></td>
+					<td><a href="datasets/graph-linkedmdb.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>RÚIAN - Address Places in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-address-places.sparql">query</a></td>
+					<td><a href="datasets/graph-cz-ruian-address-places.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>RÚIAN - Towns in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-towns.sparql">query</a></td>
+					<td><a href="datasets/graph-cz-ruian-towns.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://cedropendata.mfcr.cz/c3lod/cedr/sparql">SPARQL endpoint</a></td>
+					<td>Subsidies from public budgets in Czech Republic</td>
+					<td><a href="datasets/extractor-subsidies-cz-cedr.sparql">query</a></td>
+					<td><a href="datasets/graph-subsidies-cz-cedr.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://data.dcs.shef.ac.uk/dump/datadcs-withdblpV1-2Mar2010.rdf">RDF dump</a></td>
+					<td>University of Sheffield - Department of Comp. Sc.</td>
+					<td><a href="datasets/extractor-department-of-computer-science-university-of-sheffield.sparql">query</a></td>
+					<td><a href="datasets/graph-department-of-computer-science-university-of-sheffield.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://query.wikidata.org">SPARQL endpoint</a></td><td>Towns in Wikidata</td>
+					<td><a href="datasets/extractor-wikidata-towns.sparql">query</a></td>
+					<td><a href="datasets/graph-wikidata-towns.ttl">graph</a></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -180,45 +250,276 @@ materialicon: whatshot
 			<li><b>Pipeline in LP-ETL</b> - link to the pipeline presented in <a href="http://etl.linkedpipes.com">LinkedPipes ETL</a> user interface where it can be also executed</li>
 			<li><b>Result</b> - link to the result of execute of the pipeline in Turtle</li>
 		</ul>
-		<table class="flow-text highlight">
-			<thead>
-				<tr><th>Dataset(s)</th><th>Application</th><th>Expected</th><th>Pipeline JSON</th><th>Pipeline in LP-ETL</th><th>Result</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>DBLP</td><td>PersonalProfilesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009832798">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/98370712-c44f-489e-b6bd-db43e9be333b/012/data.ttl">TTL</a></td></tr>
-				<tr><td>DBPedia - Earthquakes</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010122165">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/f2d79977-c704-4795-8438-a376653f6641/009/data.ttl">TTL</a></td></tr>
-				<tr><td>DBPedia - Towns</td><td>PlacesOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>European Data Portal</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010253521">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/af19b59f-710d-48cb-90b4-1a10601e6fed/009/data.ttl">TTL</a></td></tr>
-				<tr><td>Check Actions - Czech Supreme Audit Office</td><td>TimeIntervalsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Check Actions - Czech Trade Inspection Authority</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482008486355">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/7f6bed26-3901-4e1c-a9c8-46bf12b366f1/009/data.ttl">TTL</a></td></tr>
-				<tr><td>Legislation CZ - Acts</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011213342">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/b81a42a7-b106-4e94-8bd2-279893c4fc14/009/data.ttl">TTL</a></td></tr>
-				<tr><td>Legislation CZ - Versions of Acts</td><td>ThingsTimelinesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011474655">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/40a0108e-9e44-42c8-818c-da5c7ed61936/015/data.ttl">TTL</a></td></tr>
-				<tr><td>Legislation UK - Acts</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011719781">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/a6f52f34-c8b4-49f7-91a0-cd1fc158acf5/009/data.ttl">TTL</a></td></tr>
-				<tr><td>Legislation UK - Versions of Acts</td><td>ThingsTimelinesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012279164">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/c70452da-e33a-4216-ae3d-54730a873d5a/009/data.ttl">TTL</a></td></tr>
-				<tr><td>LinkedMDB</td><td>PersonalProfilesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012483931">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>RÚIAN - Address Places in Czech Republic</td><td>PlacesOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009395656">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>RÚIAN - Towns in Czech Republic</td><td>ThingsOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009706205">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Subsidies from public budgets in Czech Republic</td><td>TimeInstantsApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012685838">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>University of Sheffield - Department of Computer Science</td><td>PersonalProfilesApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482134595856">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Wikidata - Towns</td><td>QuantifiedThingsOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482013076718">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>DBLP</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010030581">LP-ETL</a></td><td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/da902fdb-6607-46ba-8195-b721d1a23875/012/data.ttl">TTL</a></td></tr>
-				<tr><td>DBPedia - Earthquakes</td><td>PlacesOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Check Actions - Czech Supreme Audit Office</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Legislation CZ - Versions of Acts</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Legislation CZ - Versions of Acts</td><td>TimeIntervalsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Legislation UK - Versions of Acts</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Legislation UK - Versions of Acts</td><td>TimeIntervalsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>LinkedMDB</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>RÚIAN - Towns in Czech Republic</td><td>PlacesOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>University of Sheffield - Department of Computer Science</td><td>TimeInstantsApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482139580921">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Wikidata - Towns</td><td>PlacesOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Wikidata - Towns</td><td>ThingsOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Linkset : Towns from Wikidata --- Towns from RUIAN<br>Towns in Wikidata<br>Towns in Czech Republic - RÚIAN</td><td>QuantifiedThingsOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Linkset : Towns from DBPedia --- Towns from RUIAN<br>Towns in DBPedia<br>Towns in Czech Republic - RÚIAN</td><td>QuantifiedThingsOnMapApplication</td><td>Yes</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Linkset : Towns from Wikidata --- Towns from RUIAN<br>Towns in Wikidata<br>Towns in Czech Republic - RÚIAN</td><td>ThingsOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-				<tr><td>Linkset : Towns from DBPedia --- Towns from RUIAN<br>Towns in DBPedia<br>Towns in Czech Republic - RÚIAN</td><td>ThingsOnMapApplication</td><td>No</td><td><a href="">JSON</a></td><td><a href="">LP-ETL</a></td><td><a href="">TTL</a></td></tr>
-			</tbody>
-		</table>
+<table class="flow-text highlight">
+    <thead>
+        <tr>
+            <th>Dataset(s)</th>
+            <th>Application</th>
+            <th>Expected</th>
+            <th>Pipeline JSON</th>
+            <th>Pipeline in LP-ETL</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>DBLP</td>
+            <td>PersonalProfilesApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009832798">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/98370712-c44f-489e-b6bd-db43e9be333b/012/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>DBPedia - Earthquakes</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010122165">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/f2d79977-c704-4795-8438-a376653f6641/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>DBPedia - Towns</td>
+            <td>PlacesOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482143780564">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>European Data Portal</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010253521">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/af19b59f-710d-48cb-90b4-1a10601e6fed/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Check Actions - Czech Supreme Audit Office</td>
+            <td>TimeIntervalsApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Check Actions - Czech Trade Inspection Authority</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482008486355">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/7f6bed26-3901-4e1c-a9c8-46bf12b366f1/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation CZ - Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011213342">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/b81a42a7-b106-4e94-8bd2-279893c4fc14/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation CZ - Versions of Acts</td>
+            <td>ThingsTimelinesApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011474655">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/40a0108e-9e44-42c8-818c-da5c7ed61936/015/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation UK - Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011719781">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/a6f52f34-c8b4-49f7-91a0-cd1fc158acf5/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation UK - Versions of Acts</td>
+            <td>ThingsTimelinesApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012279164">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/c70452da-e33a-4216-ae3d-54730a873d5a/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>LinkedMDB</td>
+            <td>PersonalProfilesApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012483931">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>RÚIAN - Address Places in Czech Republic</td>
+            <td>PlacesOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009395656">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>RÚIAN - Towns in Czech Republic</td>
+            <td>ThingsOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009706205">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Subsidies from public budgets in Czech Republic</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012685838">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>University of Sheffield - Department of Computer Science</td>
+            <td>PersonalProfilesApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482134595856">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Wikidata - Towns</td>
+            <td>QuantifiedThingsOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482013076718">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>DBLP</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010030581">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/da902fdb-6607-46ba-8195-b721d1a23875/012/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>DBPedia - Earthquakes</td>
+            <td>PlacesOnMapApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482144179590">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/12fe7a3e-db42-478b-b180-cfada88e2f60/006/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Check Actions - Czech Supreme Audit Office</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482144399607">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/613de723-5ceb-4d89-9479-3149341b4a6a/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation CZ - Versions of Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482144569656">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/23744f36-eb88-457c-8920-76b4e64ea10f/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation CZ - Versions of Acts</td>
+            <td>TimeIntervalsApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482144789783">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/f0c2d5a4-209e-4f83-9c89-eb84723a0d55/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation UK - Versions of Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145130777">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/07699a5a-8aaa-4cc3-bcb6-056cd2c458ff/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation UK - Versions of Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145404771">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/a59e89dc-2353-4e60-90e5-fd534c880c6f/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>LinkedMDB</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145623113">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>RÚIAN - Towns in Czech Republic</td>
+            <td>PlacesOnMapApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>University of Sheffield - Department of Computer Science</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482139580921">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Wikidata - Towns</td>
+            <td>PlacesOnMapApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145725225">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Wikidata - Towns</td>
+            <td>ThingsOnMapApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145808367">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/2137a3eb-00b7-45ec-a22c-fee43e61f5bf/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Linkset : Towns from Wikidata --- Towns from RUIAN<br>Towns in Wikidata<br>Towns in Czech Republic - RÚIAN</td>
+            <td>QuantifiedThingsOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482146066475">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Linkset : Towns from DBPedia --- Towns from RUIAN<br>Towns in DBPedia<br>Towns in Czech Republic - RÚIAN</td>
+            <td>QuantifiedThingsOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482146066475">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Linkset : Towns from Wikidata --- Towns from RUIAN<br>Towns in Wikidata<br>Towns in Czech Republic - RÚIAN</td>
+            <td>ThingsOnMapApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Linkset : Towns from DBPedia --- Towns from RUIAN<br>Towns in DBPedia<br>Towns in Czech Republic - RÚIAN</td>
+            <td>ThingsOnMapApplication</td>
+            <td>No</td>
+            <td><a href="">JSON</a></td>
+            <td><a href="">LP-ETL</a></td>
+            <td><a href="">TTL</a></td>
+        </tr>
+    </tbody>
+</table>
 	</div>
 	<div class="row">
 		<h4 id="prototype">
