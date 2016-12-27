@@ -528,8 +528,32 @@ materialicon: whatshot
 	</div>
 	<div class="row">
     	<p class="flow-text">
-			TBA
+			Currently, the platform consist of three different services:
 		</p>
+		<ul>
+			<li>
+				LinkedPipes Discovery
+			</li>
+			<li>
+				LinkedPipes ETL
+			</li>
+			<li>
+				LinkedPipes Visualization
+			</li>
+		</ul>
+		<p class="flow-text">
+			The LP-Discovery service is used solely for discovering the application pipelines. It is preconfigured with the aforementioned tranformers and applications.
+			When a discovery is executed, it finds possible application pipelines.
+			A discovered application pipeline can be later exported into a pre-configured LP-ETL instance.
+		</p>
+		<p class="flow-text">
+			LP-ETL tool is capable of reliable application pipeline execution.
+			LP-Discovery creates a selected pipeline remotely in LP-ETL, executes it and returns an IRI of a named graph that will contain the execution results once LP-ETL finishes the execution.
+		</p>
+		<p class="flow-text">
+			LP-VIZ implements some visual applications that can be applied on pipeline execution result.
+			One can pass a reference to the named graph used to store pipeline execution results to LP-VIZ and let it visualize the data contained in the referenced graph.
+		<p>
 	</div>
 	<div class="row">
 		<h4 id="reproducing">
@@ -619,7 +643,17 @@ materialicon: whatshot
 			Such an ID can be later used with the <em>export</em> or <em>execute</em> API calls.
 			The former responds with a JSON-LD data that are in a format consumed by our ETL service.
 			The latter directly contacts a pre-configured ETL service instance, imports the specified pipeline into it and executes its processing.
+			An exemplary result of calling the <em>execute</em> call would be:
 		</p>
+
+		<pre>
+			{
+				"pipelineId" : "e2df045d-1fe3-46f8-8e61-cf5f168626b2",
+				"etlPipelineIri" : "http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482867746217",
+				"etlExecutionIri" : "http://xrg12.ms.mff.cuni.cz:8090/resources/executions/30fc168d-38b3-4c43-b3fe-2009d0f139e0",
+				"resultGraphIri" : "urn:23acd444-edbc-488c-ae31-a99a41b97e70"
+			}
+		</pre>
 
 		<p>	
 			There are two more API calls that we did not mention so far.
@@ -628,6 +662,11 @@ materialicon: whatshot
 			We used it for conducting the experiments.
 			It implements the aforementioned ranking logic and provides us with a quick overview of what are the results of the discovery.
 		</p>
+
+		<dl>
+			<dt>Result storage:</dt><dd>http://demo.visualization.linkedpipes.com:8890/sparql</dd>
+			<dt>LP-ETL instance:</dt><dd>http://xrg12.ms.mff.cuni.cz:8090</dd>
+		</dl>
     </div>
         
 </div>
