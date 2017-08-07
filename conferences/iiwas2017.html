@@ -1,0 +1,669 @@
+---
+layout: default
+title: ESWC 2017 paper experiment
+materialicon: whatshot
+---
+
+<div class="container" id="index-banner">
+	<h2 class="header center orange-text">Platform for Automated Previews of Linked Data</h2>
+    <h3 class="header center orange-text">Details of experiments for iiWAS 2017 submission</h3>
+	<div class="row">
+		<p class="flow-text">This page provide details of the experiments presented in our iiWAS 2017 submission.</p>
+		<ol class="flow-text">
+			<li><a href="#datasets">Datasets</a></li>
+			<li><a href="#applications">Applications</a></li>
+			<li><a href="#transformers">Transformers</a></li>
+			<li><a href="#results">Experiment results</a></li>
+			<li><a href="#prototype">Platform prototype overview</a></li>
+			<li><a href="#reproducing">Reproducing the experimental results</a></li>
+		</ol>
+	</div>
+	<div class="row">
+		<h4 id="datasets">
+			Datasets
+		</h4>
+		<p class="flow-text">
+		We have chosen 16 real-world datasets and manually created their output data graphs.
+		The output data graphs are necessary for the application pipeline disocvery algorithm to be able to include the datasets to discovered pipelines.
+		</p>
+		<p class="flow-text">They are presented in the following table. For each dataset, the table specifies:</p>
+		<ul class="flow-text">
+			<li><b>Datasource</b> - link to the datasource from which the dataset was extracted</li>
+			<li><b>Dataset</b> - name of the dataset</li>
+			<li><b>Dataset extraction query</b> - SPARQL query to extract the dataset from the datasource</li>
+			<li><b>Output data graph</b> - output data graph of the dataset necessary for the application pipeline discovery algorithm</li>
+		</ul>
+		<table class="flow-text highlight">
+			<thead>
+				<tr><th>Datasource</th><th>Dataset</th><th>Dataset extraction query</th><th>Output data graph</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a href="http://dblp.l3s.de/d2r/sparql">SPARQL endpoint</a></td>
+					<td>DBLP</td>
+					<td><a href="datasets/extractor-dblp.sparql">query</a></td>
+					<td><a href="datasets/graph-dblp.ttl">graph</a></td></tr>
+				<tr>
+					<td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td>
+					<td>DBPedia - Earthquakes</td>
+					<td><a href="datasets/extractor-dbpedia-earthquakes.sparql">query</a></td>
+					<td><a href="datasets/graph-dbpedia-earthquakes.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://dbpedia.org/sparql">SPARQL endpoint</a></td>
+					<td>DBPedia - Towns</td>
+					<td><a href="datasets/extractor-towns.sparql">query</a></td>
+					<td><a href="datasets/graph-towns.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://www.europeandataportal.eu/sparql">SPARQL endpoint</a></td>
+					<td>European Data Portal</td>
+					<td><a href="datasets/extractor-edp.sparql">query</a></td>
+					<td><a href="datasets/graph-edp.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>Check actions - Czech Supreme Audit Office</td>
+					<td><a href="datasets/extractor-checkactions-cz-sao.sparql">query</a></td>
+					<td><a href="datasets/graph-checkactions-cz-sao.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>Check actions - Czech Trade Inspection Authority</td><td><a href="datasets/extractor-checkactions-cz-ctia.sparql">query</a></td>
+					<td><a href="datasets/graph-checkactions-cz-ctia.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>Legislation CZ - Acts</td><td><a href="datasets/extractor-legislation-cz-acts.sparql">query</a></td>
+					<td><a href="datasets/graph-legislation-cz-acts.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>Legislation CZ - Versions of Acts</td><td><a href="datasets/extractor-legislation-cz-acts-versions.sparql">query</a></td>
+					<td><a href="datasets/graph-legislation-cz-acts-versions.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td>
+					<td>Legislation UK - Acts</td><td><a href="datasets/extractor-legislation-gb-acts.sparql">query</a></td>
+					<td><a href="datasets/graph-legislation-gb-acts.ttl">graph</a></td>
+				</tr>
+				<tr>	
+					<td><a href="http://gov.tso.co.uk/legislation/sparql">SPARQL endpoint</a></td>
+					<td>Legislation UK - Versions of Acts</td><td><a href="datasets/extractor-legislation-gb-acts-versions.sparql">query</a></td>
+					<td><a href="datasets/graph-legislation-gb-acts-versions.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://data.linkedmdb.org/sparql">SPARQL endpoint</a></td>
+					<td>LinkedMDB</td><td><a href="datasets/extractor-linkedmdb.sparql">query</a></td>
+					<td><a href="datasets/graph-linkedmdb.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>RÚIAN - Address Places in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-address-places.sparql">query</a></td>
+					<td><a href="datasets/graph-cz-ruian-address-places.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://ruian.linked.opendata.cz/sparql">SPARQL endpoint</a></td>
+					<td>RÚIAN - Towns in Czech Republic</td><td><a href="datasets/extractor-cz-ruian-towns.sparql">query</a></td>
+					<td><a href="datasets/graph-cz-ruian-towns.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://cedropendata.mfcr.cz/c3lod/cedr/sparql">SPARQL endpoint</a></td>
+					<td>Subsidies from public budgets in Czech Republic</td>
+					<td><a href="datasets/extractor-subsidies-cz-cedr.sparql">query</a></td>
+					<td><a href="datasets/graph-subsidies-cz-cedr.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://data.dcs.shef.ac.uk/dump/datadcs-withdblpV1-2Mar2010.rdf">RDF dump</a></td>
+					<td>University of Sheffield - Department of Comp. Sc.</td>
+					<td><a href="datasets/extractor-department-of-computer-science-university-of-sheffield.sparql">query</a></td>
+					<td><a href="datasets/graph-department-of-computer-science-university-of-sheffield.ttl">graph</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://query.wikidata.org">SPARQL endpoint</a></td><td>Towns in Wikidata</td>
+					<td><a href="datasets/extractor-wikidata-towns.sparql">query</a></td>
+					<td><a href="datasets/graph-wikidata-towns.ttl">graph</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<h4 id="applications">
+			Applications
+		</h4>
+	</div>
+	<div class="row">
+		<p class="flow-text">
+		We defined 7 hypothetical applications which consume LD.
+		Hypothetical means that the applications actually do not exist.
+		The discovered pipelines transform <a href="#datasets">datasets</a> to the shape specified by the input descriptor queries we provide for each application.
+		</p>
+		<p class="flow-text">The applications are presented in the following table. For each application, the table specifies:</p>
+		<ul class="flow-text">
+			<li><b>Application</b> - name of the application</li>
+			<li><b>Description</b> - description of the application</li>
+			<li><b>Input descriptor query</b> - input descriptor query of the application necessary for the application pipeline discovery algorithm</li>
+		</ul>
+		<table class="flow-text highlight">
+			<thead>
+				<tr><th>Application</th><th>Description</th><th>Input descriptor query</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>TimeInstants</td><td>Consumes time instants (instances of <a href="http://www.w3.org/2006/time#Instant">time:Instant</a>) and shows them on a time line.</td><td><a href="applications/timeInstants.sparql">query</a></td></tr>
+				<tr><td>TimeIntervals</td><td>Consumes time intervals (instances of <a href="http://www.w3.org/2006/time#Interval">time:Interval</a>) and shows them on a time line.</td><td><a href="applications/timeIntervals.sparql">query</a></td></tr>
+				<tr><td>ThingsTimeLines</td><td>Consumes versioned things (<a href="http://purl.org/dc/terms/hasVersion">dct:hasVersion</a>) where each version has a temporal abstraction (instance of <a href="http://www.w3.org/2006/time#Interval">time:Interval</a>) and shows versions of a chosen thing on a time line.</td><td><a href="applications/thingsTimeLines.sparql">query</a></td></tr>
+				<tr><td>PlacesOnMap</td><td>Consumes spatial things (instances of <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a>) and shows them as points on a map.</td><td><a href="applications/placesOnMap.sparql">query</a></td></tr>
+				<tr><td>ThingsOnMap</td><td>Consumes things with geographical abstractions and shows them as labeled points on a map. A geographical abstraction is a place associated (<a href="http://www.w3.org/2003/01/geo/wgs84_pos#location">geo:location</a>) with a location expressed as a spatial thing (instances of <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a>).</td><td><a href="applications/thingsOnMap.sparql">query</a></td></tr>
+				<tr><td>QuantifiedThingsOnMap</td><td>Consumes things with geographical and quantified abstractions and shows them as points on a map. Points have labels and quantified values. A geographical abstraction is a place associated (<a href="http://www.w3.org/2003/01/geo/wgs84_pos#location">geo:location</a>) with a location expressed as a spatial thing (instances of <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a>). A quantified abstraction is a thing with a value associated by <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">rdf:value</a></td><td><a href="applications/quantifiedThingsOnMap.sparql">query</a></td></tr>
+				<tr><td>PersonalProfiles</td><td>Consumes persons (instances of <a href="http://xmlns.com/foaf/0.1/#Person">foaf:Person</a>) how made (<a href="http://xmlns.com/foaf/0.1/#made">foaf:Person</a>) some things where each thing has a temporal or geographical abstraction (see descriptions above). For a chosen person it shows the things he or she made on a timeline and/or on a map.</td><td><a href="applications/personalProfiles.sparql">query</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<h4 id="transformers">
+			Transformers
+		</h4>
+	</div>
+	<div class="row">
+    	<p class="flow-text">
+			We defined 33 transformers listed in the following table.
+			The table starts with transformers which transform proprietary RDF shapes to non-proprietary ones.
+			Transformers which transform non-proprietary RDF shapes to other non-proprietary shapes follow.
+			A proprietary RDF shape is a shape which contains classes or predicates from proprietary vocabularies.
+			A proprietary vocabulary is a vocabulary which is used only in data sources provided by the same publisher, i.e is not reused by more publishers.
+			For each transformer, the table specifies:
+		</p>
+		<ul class="flow-text">
+			<li><b>Transformer</b> - name of the transformer</li>
+			<li><b>Proprietary input</b> - true when the input expected by the transformer has a proprietary RDF shape.</li>
+			<li><b>Update query</b> - update query which defines the transformer</li>
+		</ul>
+		<table class="flow-text highlight">
+			<thead>
+				<tr><th>Transformer</th><th>Proprietary input</th><th>Update query</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>cedr-dotace-castka2rdf-value</td><td>true</td><td><a href="transformers/cedr-dotace-castka2rdf-value.sparql">query</a></td></tr>
+				<tr><td>cedr-sidliNaAdrese2geo-SpatialThing</td><td>true</td><td><a href="transformers/cedr-sidliNaAdrese2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>cedr-smlouvaPodpisDatum2dct-created</td><td>true</td><td><a href="transformers/cedr-smlouvaPodpisDatum2dct-created.sparql">query</a></td></tr>
+				<tr><td>cedr-smlouvaPodpisDatum2time-Instant</td><td>true</td><td><a href="transformers/cedr-smlouvaPodpisDatum2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dbpedia-date2time-Instant</td><td>true</td><td><a href="transformers/dbpedia-date2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dbpedia-populationMetro2rdf-value</td><td>true</td><td><a href="transformers/dbpedia-populationMetro2rdf-value.sparql">query</a></td></tr>
+				<tr><td>dbpedia-populationTotal2rdf-value</td><td>true</td><td><a href="transformers/dbpedia-populationTotal2rdf-value.sparql">query</a></td></tr>
+				<tr><td>lex-Act2frbr-Work</td><td>true</td><td><a href="transformers/lex-Act2frbr-Work.sparql">query</a></td></tr>
+				<tr><td>movie-initial-release-of2time-Instant</td><td>true</td><td><a href="transformers/movie-initial-release-of2time-Instant.sparql">query</a></td></tr>
+				<tr><td>movie-person-name2foaf-name</td><td>true</td><td><a href="transformers/movie-person-name2foaf-name.sparql">query</a></td></tr>
+				<tr><td>movie-person2foaf-made</td><td>true</td><td><a href="transformers/movie-person2foaf-made.sparql">query</a></td></tr>
+				<tr><td>ruian-AdresniMisto2geo-SpatialThing</td><td>true</td><td><a href="transformers/ruian-AdresniMisto2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>ruian-DefinicniBod2geo-SpatialThing</td><td>true</td><td><a href="transformers/ruian-DefinicniBod2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>wikidata-coordinate-location2geo-SpatialThing</td><td>true</td><td><a href="transformers/wikidata-coordinate-location2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>wikidata-population2rdf-value</td><td>true</td><td><a href="transformers/wikidata-population2rdf-value.sparql">query</a></td></tr>
+				<tr><td>bibtex-date2dct-issued</td><td>false</td><td><a href="transformers/bibtex-date2dct-issued.sparql">query</a></td></tr>
+				<tr><td>dct-created2time-Instant</td><td>false</td><td><a href="transformers/dct-created2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dct-date2time-Instant</td><td>false</td><td><a href="transformers/dct-date2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dct-issued2time-Instant</td><td>false</td><td><a href="transformers/dct-issued2time-Instant.sparql">query</a></td></tr>
+				<tr><td>dct-valid2time-Interval-01</td><td>false</td><td><a href="transformers/dct-valid2time-Interval-01.sparql">query</a></td></tr>
+				<tr><td>dct-valid2time-Interval-02</td><td>false</td><td><a href="transformers/dct-valid2time-Interval-02.sparql">query</a></td></tr>
+				<tr><td>foaf-maker2foaf-made</td><td>false</td><td><a href="transformers/foaf-maker2foaf-made.sparql">query</a></td></tr>
+				<tr><td>foaf-name2dct-title</td><td>false</td><td><a href="transformers/foaf-name2dct-title.sparql">query</a></td></tr>
+				<tr><td>foaf-rdfs-label2foaf-name</td><td>false</td><td><a href="transformers/foaf-rdfs-label2foaf-name.sparql">query</a></td></tr>
+				<tr><td>foaf-skos-prefLabel2foaf-name</td><td>false</td><td><a href="transformers/foaf-skos-prefLabel2foaf-name.sparql">query</a></td></tr>
+				<tr><td>frbr-realization2dct-hasVersion</td><td>false</td><td><a href="transformers/frbr-realization2dct-hasVersion.sparql">query</a></td></tr>
+				<tr><td>frbr-realizationOf2frbr-realization</td><td>false</td><td><a href="transformers/frbr-realizationOf2frbr-realization.sparql">query</a></td></tr>
+				<tr><td>gr-legalName2dct-title</td><td>false</td><td><a href="transformers/gr-legalName2dct-title.sparql">query</a></td></tr>
+				<tr><td>org-hasMembership2org-member</td><td>false</td><td><a href="transformers/org-hasMembership2org-member.sparql">query</a></td></tr>
+				<tr><td>schema-address2geo-SpatialThing</td><td>false</td><td><a href="transformers/schema-address2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>schema-GeoCoordinates2geo-SpatialThing</td><td>false</td><td><a href="transformers/schema-GeoCoordinates2geo-SpatialThing.sparql">query</a></td></tr>
+				<tr><td>swrc-editor2foaf-made</td><td>false</td><td><a href="transformers/swrc-editor2foaf-made.sparql">query</a></td></tr>
+				<tr><td>time-Interval2time-Interval</td><td>false</td><td><a href="transformers/time-Interval2time-Interval.sparql">query</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<h4 id="results">
+			Experiment results
+		</h4>
+	</div>
+	<div class="row">
+		<ol class="flow-text">
+			<li><b>Single dataset</b> - (Dataset,Application) pairs for Experiment 1. Column Expected denotes whether the application was identified as the best application for the dataset or not. Expected == false means that the algorithm discovered a pipeline for the pair and it was manually checked after the discovery that the pair is useful. Columns Expected* show ideal pipelines for the pair which were identified before we ran the discovery. Columns Unexpected* show other pipelines discovered by the algorithm which were denoted as useful manually after the discovery. Other columns are helpers or reserved for the future use.</li>
+			<li><b>Single dataset - results</b> - shows the full list of discovered pipelines for all datasets in Experiment 1. It does not make sense to read it.</li>
+			<li><b>Single dataset - summary</b> - shows the pivot table computed from Single dataset - results. It shows the grouping of pipelines and ranking the groups as described in the paper. Level 1 contains applications. Level 2 contains datasets. Level 3 contains groups of pipelines. Level 4 contains pipelines. Each pipeline is displayed as a sequence of transformers which are present in the pipeline.</li>
+			<li><b>Two datasets</b> - (Dataset+Linkset+Dataset,Application) pairs for Experiment 2. The same meaning of columns as for Single dataset.</li>
+			<li><b>Two datasets - results</b> - shows the full list of discovered pipelines for in Experiment 2. It does not make sense to read it.</li>
+			<li><b>Two datasets - summary</b> - shows the pivot table computed from STwo dataset - results. Its structure is the same as the strurcture of Single dataset - summary.</li>
+		</ol>
+	</div>
+	<div class="row">
+    	<p class="flow-text">
+			The ideal pipeline discovered by the algorithm for each pair of dataset(s) and application listed in the provided detailed results is available in the table below.
+			For each pipeline, the table specifies:
+		</p>
+		<ul class="flow-text">
+			<li><b>Dataset(s)</b> - dataset name (Experiment 1) or names of two datasets and linkset (Experiment 2)</li>
+			<li><b>Application</b> - application name</li>
+			<li><b>Expected</b> - shows whether the combination of Dataset(s) and Application was expected, i.e. whether the Appliation was chosen as the best for the Dataset(s) before we ran the discovery</b></li>
+			<li><b>Pipeline JSON</b> - link to the JSON representation of the discovered pipeline which can be directly imported to <a href="http://etl.linkedpipes.com">LinkedPipes ETL</a></li>
+			<li><b>Pipeline in LP-ETL</b> - link to the pipeline presented in <a href="http://etl.linkedpipes.com">LinkedPipes ETL</a> user interface where it can be also executed</li>
+			<li><b>Result</b> - link to the result of execute of the pipeline in Turtle</li>
+		</ul>
+<table class="flow-text highlight">
+    <thead>
+        <tr>
+            <th>Dataset(s)</th>
+            <th>Application</th>
+            <th>Expected</th>
+            <th>Pipeline JSON</th>
+            <th>Pipeline in LP-ETL</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>DBLP</td>
+            <td>PersonalProfilesApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482009832798">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009832798">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/98370712-c44f-489e-b6bd-db43e9be333b/012/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>DBPedia - Earthquakes</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482010122165">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010122165">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/f2d79977-c704-4795-8438-a376653f6641/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>DBPedia - Towns</td>
+            <td>PlacesOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482143780564">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482143780564">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/cc35b5cc-3166-417e-9500-47b81822d62b/006/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>European Data Portal</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482010253521">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010253521">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/af19b59f-710d-48cb-90b4-1a10601e6fed/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Check Actions - Czech Supreme Audit Office</td>
+            <td>TimeIntervalsApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482221607966">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482221607966">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/7f6bed26-3901-4e1c-a9c8-46bf12b366f1/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Check Actions - Czech Trade Inspection Authority</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482008486355">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482008486355">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/7f6bed26-3901-4e1c-a9c8-46bf12b366f1/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation CZ - Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482011213342">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011213342">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/b81a42a7-b106-4e94-8bd2-279893c4fc14/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation CZ - Versions of Acts</td>
+            <td>ThingsTimelinesApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482011474655">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011474655">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/40a0108e-9e44-42c8-818c-da5c7ed61936/015/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation UK - Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482011719781">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482011719781">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/a6f52f34-c8b4-49f7-91a0-cd1fc158acf5/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation UK - Versions of Acts</td>
+            <td>ThingsTimelinesApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482012279164">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012279164">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/c70452da-e33a-4216-ae3d-54730a873d5a/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>LinkedMDB</td>
+            <td>PersonalProfilesApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482012483931">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012483931">LP-ETL</a></td>
+            <td><small>IRI included an unencoded space: '32' [line 99891]</small></td>
+        </tr>
+        <tr>
+            <td>RÚIAN - Address Places in Czech Republic</td>
+            <td>PlacesOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482009395656">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009395656">LP-ETL</a></td>
+            <td><small>Virtuoso 22023 Error SR...: The result vector is too large SPARQL query.</small></td>
+        </tr>
+        <tr>
+            <td>RÚIAN - Towns in Czech Republic</td>
+            <td>ThingsOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482009706205">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482009706205">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/2137a3eb-00b7-45ec-a22c-fee43e61f5bf/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Subsidies from public budgets in Czech Republic</td>
+            <td>TimeInstantsApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482012685838">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482012685838">LP-ETL</a></td>
+            <td><small>HTTP 500</small></td>
+        </tr>
+        <tr>
+            <td>University of Sheffield - Department of Computer Science</td>
+            <td>PersonalProfilesApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482134595856">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482134595856">LP-ETL</a></td>
+            <td><small>403 Forbidden</td>
+        </tr>
+        <tr>
+            <td>Wikidata - Towns</td>
+            <td>QuantifiedThingsOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482013076718">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482013076718">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/2bc0b4ee-c58e-4912-ac8a-22da1d254a91/012/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>DBLP</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482010030581">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482010030581">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/da902fdb-6607-46ba-8195-b721d1a23875/012/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>DBPedia - Earthquakes</td>
+            <td>PlacesOnMapApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482144179590">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482144179590">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/12fe7a3e-db42-478b-b180-cfada88e2f60/006/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Check Actions - Czech Supreme Audit Office</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482144399607">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482144399607">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/613de723-5ceb-4d89-9479-3149341b4a6a/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation CZ - Versions of Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482144569656">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482144569656">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/23744f36-eb88-457c-8920-76b4e64ea10f/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation CZ - Versions of Acts</td>
+            <td>TimeIntervalsApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482144789783">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482144789783">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/f0c2d5a4-209e-4f83-9c89-eb84723a0d55/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation UK - Versions of Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482145130777">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145130777">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/07699a5a-8aaa-4cc3-bcb6-056cd2c458ff/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Legislation UK - Versions of Acts</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482145404771">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145404771">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/a59e89dc-2353-4e60-90e5-fd534c880c6f/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>LinkedMDB</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482145623113">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145623113">LP-ETL</a></td>
+            <td><small>IRI included an unencoded space: '32' [line 99891]</small></td>
+        </tr>
+        <tr>
+            <td>RÚIAN - Towns in Czech Republic</td>
+            <td>PlacesOnMapApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482221946206">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482221946206">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/64ea8c8b-3430-4c23-9aec-6bd3796d4147/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>University of Sheffield - Department of Computer Science</td>
+            <td>TimeInstantsApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482139580921">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482139580921">LP-ETL</a></td>
+            <td><small>403 Forbidden</td>
+        </tr>
+        <tr>
+            <td>Wikidata - Towns</td>
+            <td>PlacesOnMapApplication</td>
+            <td>No</td>
+            <td><a>JSON</a></td>
+            <td><a>LP-ETL</a></td>
+            <td><a>TTL</a></td>
+        </tr>
+        <tr>
+            <td>Wikidata - Towns</td>
+            <td>ThingsOnMapApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482145808367">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482145808367">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/2137a3eb-00b7-45ec-a22c-fee43e61f5bf/009/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Linkset : Towns from Wikidata --- Towns from RUIAN<br>Towns in Wikidata<br>Towns in Czech Republic - RÚIAN</td>
+            <td>QuantifiedThingsOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482146066475">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482146066475">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/de9fdc05-b323-4f22-bf88-973dc8e45352/022/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Linkset : Towns from DBPedia --- Towns from RUIAN<br>Towns in DBPedia<br>Towns in Czech Republic - RÚIAN</td>
+            <td>QuantifiedThingsOnMapApplication</td>
+            <td>Yes</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482225467764">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482225467764">LP-ETL</a></td>
+            <td><small>DBPedia timeout</small></td>
+        </tr>
+        <tr>
+            <td>Linkset : Towns from Wikidata --- Towns from RUIAN<br>Towns in Wikidata<br>Towns in Czech Republic - RÚIAN</td>
+            <td>ThingsOnMapApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482225884689">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482225884689">LP-ETL</a></td>
+            <td><a href="ftp://xrg12.ms.mff.cuni.cz:2221/44c2608a-6c44-4fe4-95b4-c2c7ea58676b/019/data.ttl">TTL</a></td>
+        </tr>
+        <tr>
+            <td>Linkset : Towns from DBPedia --- Towns from RUIAN<br>Towns in DBPedia<br>Towns in Czech Republic - RÚIAN</td>
+            <td>ThingsOnMapApplication</td>
+            <td>No</td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482225310382">JSON</a></td>
+            <td><a href="http://xrg12.ms.mff.cuni.cz:8090/#/pipelines/edit/canvas?pipeline=http:%2F%2Fxrg12.ms.mff.cuni.cz:8090%2Fresources%2Fpipelines%2Fcreated-1482225310382">LP-ETL</a></td>
+            <td><small>DBPedia timeout</small></td>
+        </tr>
+    </tbody>
+</table>
+	</div>
+	<div class="row">
+		<h4 id="prototype">
+			Platform prototype overview
+		</h4>
+	</div>
+	<div class="row">
+    	<p class="flow-text">
+			Currently, the platform consist of three different services:
+		</p>
+		<ul>
+			<li>
+				LinkedPipes Discovery
+			</li>
+			<li>
+				LinkedPipes ETL
+			</li>
+			<li>
+				LinkedPipes Visualization
+			</li>
+		</ul>
+		<p class="flow-text">
+			The LP-Discovery service is used solely for discovering the application pipelines. It is preconfigured with the aforementioned tranformers and applications.
+			When a discovery is executed, it finds possible application pipelines.
+			A discovered application pipeline can be later exported into a pre-configured LP-ETL instance.
+		</p>
+		<p class="flow-text">
+			LP-ETL tool is capable of reliable application pipeline execution.
+			LP-Discovery creates a selected pipeline remotely in LP-ETL, executes it and returns an IRI of a named graph that will contain the execution results once LP-ETL finishes the execution.
+		</p>
+		<p class="flow-text">
+			LP-VIZ implements some visual applications that can be applied on pipeline execution result.
+			One can pass a reference to the named graph used to store pipeline execution results to LP-VIZ and let it visualize the data contained in the referenced graph.
+		<p>
+	</div>
+	<div class="row">
+		<h4 id="reproducing">
+			Reproducing the experimental results
+		</h4>
+	</div>
+    <div class="row">
+        <p class="flow-text">This page describes the steps necessary to reproduce the results described in our ESWC 2017 paper submission.</p>
+    </div>
+    <div class="row">
+    	<p class="flow-text">
+	    	To evaluate the proposed platform we have implemented LinkedPipes.
+			LinkedPipes is a suite of web services, each specialized on different tasks related to processing LinkedData.
+			In this chapter, we describe the current state of the implementation of this suite.
+			We briefly describe the services related to application pipeline discovery.
+			We also describe, how the services communicate with each other in order to support application pipeline discovery workflows.
+		</p>  
+
+		<p>
+			The application pipeline discovery itself is implemented in the <em>discovery service</em>, which provides the following API:
+		</p>  
+
+		<pre>
+		start   POST         /discovery/start
+		status  GET          /discovery/$id
+		list    GET          /discovery/$id/pipelines
+		csv     GET          /discovery/$id/csv
+		export  GET          /discovery/$id/pipelines/$pipelineId
+		execute GET          /discovery/$id/pipelines/$pipelineId/execute
+		stop    GET          /discovery/$id/stop
+		</pre>
+
+		<p>
+			The discovery itself is executed by calling the <em>start</em> API call.
+			This API call expects a discovery configuration JSON object to be posted:
+		</p>
+
+		<pre>
+		{
+		    "sparqlEndpoints": [{
+		        "url": "http://www.europeandataportal.eu/sparql",
+		        "descriptorIri": "https://...sample.ttl",
+		        "defaultGraphIris": [],
+		        "label": "European Data Portal"
+		    }]
+		}
+		</pre>
+
+		<p>
+			The configuration object allows the user to specify an array of SPARQL endpoint definitions. For each endpoint, it requires its URL and dereferencable IRI of it's descriptor.
+			Optionally, it accepts also list of default graph IRIs, which are named graphs that are to be considered while performing the discovery.
+			In order to make the discovery results more readable, it also accepts a label that user can define to distinguish the endpoints.
+		</p>
+
+		<p>
+			When the <em>start</em> API call is executed, it returns a JSON object containing just one property, which is an ID of the started pipeline discovery instance:
+		</p>
+
+		<pre>
+		{ "id": "c1582982-1038-4218-911c-12c94ebd2b19" }
+		</pre>
+
+		<p>
+		This ID is to be used later as a parameter of the remaining API calls.
+		</p>
+
+		<p>
+			The next step is wait for the discovery to complete.
+			Although the partial results (discovered application pipelines are available via the <em>list</em> API call immediately after the iteration in which a pipeline is discovered are found, the \emph{status} API call could be used to wait for the discovery to complete.
+		</p>
+
+		<pre>
+		{
+		  "pipelineCount": 1,
+		  "isFinished": true,
+		  "duration": 350
+		}
+		</pre>
+
+		<p>	
+			Once the <em>isFinished</em> property is set to <em>true</em>, the pipeline discovery is finished and we can call the <em>list</em> API call to obtain all discovered application pipelines.
+			The returned data contain details about all the discovered pipelines, mainly which of the provided datasources were used, what application is able to consume data from them and what are the transformations needed to assemble the application pipeline.
+			Moreover, it contains an ID assigned to every discovered pipeline.
+		</p>	
+
+		<p>	
+			Such an ID can be later used with the <em>export</em> or <em>execute</em> API calls.
+			The former responds with a JSON-LD data that are in a format consumed by our ETL service.
+			The latter directly contacts a pre-configured ETL service instance, imports the specified pipeline into it and executes its processing.
+			An exemplary result of calling the <em>execute</em> call would be:
+		</p>
+
+		<pre>
+			{
+				"pipelineId" : "e2df045d-1fe3-46f8-8e61-cf5f168626b2",
+				"etlPipelineIri" : "http://xrg12.ms.mff.cuni.cz:8090/resources/pipelines/created-1482867746217",
+				"etlExecutionIri" : "http://xrg12.ms.mff.cuni.cz:8090/resources/executions/30fc168d-38b3-4c43-b3fe-2009d0f139e0",
+				"resultGraphIri" : "urn:23acd444-edbc-488c-ae31-a99a41b97e70"
+			}
+		</pre>
+
+		<p>	
+			There are two more API calls that we did not mention so far.
+			One of them is the <em>stop</em> API call, which can be used to terminate the pipeline discovery if necessary.
+			The last one is named <em>csv</em>, which is an API call that temporarily simulates the ranking service.
+			We used it for conducting the experiments.
+			It implements the aforementioned ranking logic and provides us with a quick overview of what are the results of the discovery.
+		</p>
+
+		<dl>
+			<dt>Result storage:</dt><dd>http://demo.visualization.linkedpipes.com:8890/sparql</dd>
+			<dt>LP-ETL instance:</dt><dd>http://xrg12.ms.mff.cuni.cz:8090</dd>
+		</dl>
+    </div>
+        
+</div>
