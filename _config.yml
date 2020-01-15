@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 
 sass:
     sass_dir: _sass
-gems:
+plugins:
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
